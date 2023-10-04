@@ -1,0 +1,8 @@
+{
+  "models": {
+    "alwaysai/yolo_x": 2
+  },
+  "scripts": {
+    "start": "python app.py"
+  }
+}
