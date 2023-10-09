@@ -4,7 +4,7 @@ from yolo_x import yolo_x_post_process, yolo_x_pre_process
 
 
 def main():
-    obj_detect = edgeiq.ObjectDetection("sheshalwaysai/yolo_x", pre_process=yolo_x_pre_process, post_process=yolo_x_post_process)
+    obj_detect = edgeiq.ObjectDetection("alwaysai/yolo_x", pre_process=yolo_x_pre_process, post_process=yolo_x_post_process)
     obj_detect.load(engine=edgeiq.Engine.DNN)
 
     print("Loaded model:\n{}\n".format(obj_detect.model_id))
@@ -15,7 +15,7 @@ def main():
     fps = edgeiq.FPS()
 
     try:
-        with edgeiq.WebcamVideoStream(cam=2) as video_stream, \
+        with edgeiq.WebcamVideoStream(cam=0) as video_stream, \
                 edgeiq.Streamer() as streamer:
             # Allow Webcam to warm up
             time.sleep(2.0)
