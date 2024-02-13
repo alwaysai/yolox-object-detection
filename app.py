@@ -1,11 +1,10 @@
 import time
 import edgeiq
-from yolo_x import yolo_x_post_process, yolo_x_pre_process
 
 
 def main():
-    obj_detect = edgeiq.ObjectDetection("alwaysai/yolo_x", pre_process=yolo_x_pre_process, post_process=yolo_x_post_process)
-    obj_detect.load(engine=edgeiq.Engine.DNN)
+    obj_detect = edgeiq.ObjectDetection("alwaysai/yolo_x")
+    obj_detect.load(engine=edgeiq.Engine.ONNX_RT)
 
     print("Loaded model:\n{}\n".format(obj_detect.model_id))
     print("Engine: {}".format(obj_detect.engine))
