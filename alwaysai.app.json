@@ -1,6 +1,6 @@
 {
   "models": {
-    "alwaysai/yolo_x": 2
+    "alwaysai/yolo_x": 3
   },
   "scripts": {
     "start": "python app.py"
